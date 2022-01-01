@@ -31,7 +31,7 @@ iiii=0;
 delta=3;
 L=32*1;
 FFT_length=length(Sig1);
-for snr=0:2:10%snr=-10:2:10
+for snr=0:2:20%snr=-10:2:10
     iiii=iiii+1;
     
     for k1=1:NS
@@ -149,7 +149,7 @@ for snr=0:2:10%snr=-10:2:10
     end
     
     figure;
-    snr=0:2:10;
+    snr=0:2:20;
     plot(snr, 10*(log10(mmse_250_12)),'-.ro','linewidth',4);
     hold on;
     plot(snr, 10*(log10(mmse_500_12)),'-.bo','linewidth',4);
@@ -189,21 +189,21 @@ figure;
     hold on;
     plot(snr, 10*(log10(mmse_2000_12)),'ko:','linewidth',4);
        hold on;
-    plot(snr, 10*(log10(mmse_250_25)),'r+-.','linewidth',4);
+    plot(snr, 10*(log10(mmse_250_25)),'c+-.','linewidth',4);
     hold on;
-    plot(snr, 10*(log10(mmse_500_25)),'g+-.','linewidth',4);
+    plot(snr, 10*(log10(mmse_500_25)),'m+-.','linewidth',4);
     hold on;
-    plot(snr, 10*(log10(mmse_1000_25)),'b+-.','linewidth',4);
+    plot(snr, 10*(log10(mmse_1000_25)),'y+-.','linewidth',4);
     hold on;
-    plot(snr, 10*(log10(mmse_2000_25)),'k+-.','linewidth',4);
+    plot(snr, 10*(log10(mmse_2000_25)),'r+-.','linewidth',4);
        hold on;
-    plot(snr, 10*(log10(mmse_250_50)),'rs--','linewidth',4);
+    plot(snr, 10*(log10(mmse_250_50)),'gs--','linewidth',4);
     hold on;
-    plot(snr, 10*(log10(mmse_500_50)),'gs--','linewidth',4);
+    plot(snr, 10*(log10(mmse_500_50)),'bs--','linewidth',4);
     hold on;
-    plot(snr, 10*(log10(mmse_1000_50)),'bs--','linewidth',4);
+    plot(snr, 10*(log10(mmse_1000_50)),'ys--','linewidth',4);
     hold on;
-    plot(snr, 10*(log10(mmse_2000_50)),'ks--','linewidth',4);
+    plot(snr, 10*(log10(mmse_2000_50)),'ms--','linewidth',4);
    
     xlabel('Signal to Noise Ratio');
     ylabel('Mean Square Error (dB)');
