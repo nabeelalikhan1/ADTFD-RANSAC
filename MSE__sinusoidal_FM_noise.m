@@ -13,8 +13,8 @@ IF_O(:,2)=-2*cos(2*pi*t)*2*pi+SampFreq/4;
 
 
 num=2;
-NS=250/25;
-%NS=100;
+NS=250/1;
+NS=100;
 %NS=5;
 IF_O=2*IF_O/length(IF_O);
 % HADTFD BASED
@@ -24,7 +24,7 @@ iiii=0;
 delta=2;
 L=32*1;
 FFT_length=length(Sig1);
-for snr=0:2:10
+for snr=-10:2:10
     
     iiii=iiii+1;
     
@@ -44,7 +44,7 @@ for snr=0:2:10
             elseif kkkkk==1
 %                                        findex =ADTFD_RANSAC(Sig,3,15,64,num,500/1,4,32,8);
                                      %   findex =ADTFD_RANSAC(Sig,3,15,64,num,500/1,4,16,4);
-                               findex =ADTFD_RANSAC(Sig,3,15,64,num,1000/1,4,16,1);
+                                                 findex =ADTFD_RANSAC(Sig,3,15,64,num,1000/1,4,16/1,1);
 
             elseif kkkkk==2
                                           findex =QML_RANSAC(Sig,3,15,64,num,1000/1,4,16/1,1);
@@ -96,7 +96,7 @@ for snr=0:2:10
      mse_QML_RANSAC(iiii)
     end  
 
-    snr=0:2:10;
+    snr=-10:2:10;
     plot(snr, 10*(log10(mse_FAST_IF)),'-rh','linewidth',4);
     hold on;
     plot(snr, 10*(log10(mse_R)),'-bh','linewidth',4);
